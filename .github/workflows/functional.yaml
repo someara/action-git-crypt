@@ -25,4 +25,4 @@ jobs:
       - name: cat testfile
         id: step_two
         run: |
-          cat test/testfile
+          cat test/testfile | base64
