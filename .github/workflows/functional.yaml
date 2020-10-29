@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Unlock secrets
-        uses: someara/action-git-crypt-unlock
+        uses: someara/action-git-crypt-unlock@main
         env:
           GPG_PRIVATE_KEY: "derp"
           GPG_KEY_GRIP: "derp"
