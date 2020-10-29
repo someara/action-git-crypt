@@ -1,0 +1,30 @@
+name: functional
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Unlock secrets
+        uses: someara/action-git-crypt-unlock
+        env:
+          GPG_PRIVATE_KEY: "derp"
+          GPG_KEY_GRIP: "derp"
+          GPG_KEY_PASS: "derp"
+
+      - name: echo things
+        id: step_two
+        run: |
+          echo $GPG_PRIVATE_KEY
+          echo $GPG_KEY_GRIP
+          echo $GPG_KEY_PASS
