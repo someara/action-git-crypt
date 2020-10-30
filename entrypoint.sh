@@ -23,4 +23,5 @@ echo "/usr/lib/gnupg2/gpg-preset-passphrase --preset --passphrase \$GPG_KEY_PASS
 echo "git-crypt unlock"
 git-crypt unlock
 
+echo "removing secret"
 rm "$HOME"/git-crypt-key.asc
