@@ -1,0 +1,9 @@
+name: "Lock git-crypt"
+description: "Lock git-crypt"
+author: "Sean OMeara"
+branding:
+  icon: "unlock"
+  color: "green"
+runs:
+  using: "docker"
+  image: "Dockerfile"
