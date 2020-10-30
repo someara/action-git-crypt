@@ -27,3 +27,12 @@ jobs:
         id: print_testfile
         run: |
           cat test/testfile
+
+      - name: lock secrets
+        id: lock_secrets
+        uses: someara/action-git-crypt-unlock/lock@main
+
+      - name: print md5
+        id: print_md5
+        run: |
+          cat test/testfile | md5sum
