@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM dokken/ubuntu-20.04
 LABEL "name"="git-crypt unlock"
 LABEL "maintainer"="Sean OMeara <sean@sean.io>"
 
