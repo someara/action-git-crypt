@@ -9,7 +9,10 @@ echo ${GPG_KEY_PASS?"please set GPG_KEY_PASS"} > /dev/null
 echo "$GPG_PRIVATE_KEY" | base64 -d > "$HOME"/git-crypt-key.asc
 gpg --batch --import "$HOME"/git-crypt-key.asc
 
+echo "gpg -K"
 gpg -K
+
+echo "GPG_KEY_GRIP: $GPG_KEY_GRIP"
 
 gpgconf --kill gpg-agent
 gpg-agent --daemon --allow-preset-passphrase --max-cache-ttl 3153600000
