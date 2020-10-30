@@ -7,7 +7,7 @@ echo ${GPG_KEY_GRIP?"please set GPG_KEY_GRIP"} > /dev/null
 echo ${GPG_KEY_PASS?"please set GPG_KEY_PASS"} > /dev/null
 
 echo "$GPG_PRIVATE_KEY" | base64 -d > "$HOME"/git-crypt-key.asc
-gpg --batch --import "$HOME"/git-crypt-key.asc
+gpg --batch --allow-secret-key-import --import "$HOME"/git-crypt-key.asc
 
 echo "gpg --with-keygrip --list-secret-keys"
 gpg --with-keygrip --list-secret-keys
