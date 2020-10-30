@@ -2,9 +2,9 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-echo ${GPG_PRIVATE_KEY?"please set GPG_PRIVATE_KEY"}
-echo ${GPG_KEY_GRIP?"please set GPG_KEY_GRIP"}
-echo ${GPG_KEY_PASS?"please set GPG_KEY_PASS"}
+echo ${GPG_PRIVATE_KEY?"please set GPG_PRIVATE_KEY"} > /dev/null
+echo ${GPG_KEY_GRIP?"please set GPG_KEY_GRIP"} > /dev/null
+echo ${GPG_KEY_PASS?"please set GPG_KEY_PASS"} > /dev/null
 
 echo "$GPG_PRIVATE_KEY" | base64 -d > "$HOME"/git-crypt-key.asc
 gpg --batch --import "$HOME"/git-crypt-key.asc
