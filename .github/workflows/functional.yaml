@@ -14,11 +14,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: print encrypted testfile base64
-      - id: print_encrypted
-        run: |
-          cat test/testfile | base64
         
       - name: unlock secrets
         id: unlock_secrets
